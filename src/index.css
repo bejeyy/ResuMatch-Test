@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimalist scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0a131c; }
+::-webkit-scrollbar-thumb { background: #1e3044; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #2a415a; }
+
+/* Light mode overrides using standard .dark class toggling */
+html:not(.dark) ::-webkit-scrollbar-track { background: #f1f5f9; }
+html:not(.dark) ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+html:not(.dark) body { background-color: #f8fafc; color: #1e293b; }
+
+/* Slider styling */
+input[type=range].accent-slider {
+  -webkit-appearance: none;
+  background: #1e3a33;
+  height: 6px;
+  border-radius: 9999px;
+}
+input[type=range].accent-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #e2f1e9;
+  cursor: pointer;
+}
+html:not(.dark) body { 
+  background-color: #f8fafc; 
+  color: #1e293b;
+  @apply font-sans; 
+}
+
+html.dark body {
+  @apply font-sans;
+}
