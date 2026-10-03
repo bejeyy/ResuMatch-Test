@@ -99,7 +99,7 @@ export const ProfileModal = ({ user, onClose, isDarkMode = true }) => {
       url: supabase.storage.from('resumes').getPublicUrl(fileName).data.publicUrl
     });
     setIsUploading(false);
-    fetch('http://localhost:3000/api/parse-resume', {
+    fetch(`${import.meta.env.VITE_API_URL}/api/parse-resume`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userId: user.id, fileName: fileName })

@@ -23,11 +23,14 @@ export const registerUser = async (email, password, role, fullName, companyName)
 };
 export const loginWithEmail = async (email, password) => {
   try {
-    const response = await fetch('http://localhost:3000/api/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/login`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      }
+    );
     
     const result = await response.json();
     if (!result.success) throw new Error(result.message);
