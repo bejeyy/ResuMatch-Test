@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { logoutUser, getCurrentUser, updateUserMetadata, createPublicProfile } from "../../data/services/authService";
 import { TopHeader } from "../components/TopHeader";
-// File on disk is "FIlterModal.jsx" (capital I). The import must match exactly or the Linux build on Railway fails.
 import { FilterModal } from "../components/FilterModal";
 import { ApplicationsModal } from "../components/ApplicationsModal";
 import { ProfileModal } from "../components/ProfileModal";
